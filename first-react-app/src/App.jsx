@@ -1,14 +1,13 @@
-import Header from "./components/Header"
-import BookList from "./components/BookList"
+import Header from "./components/Header";
+import BookList from "./components/BookList";
 
 function App() {
-
   return (
     <section className="app">
-      <Header/>
-      <BookList/>        
- </section>
-  )
+      <Header />
+      <BookList />
+    </section>
+  );
 }
 
-export default App
+export default App;

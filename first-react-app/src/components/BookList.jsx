@@ -1,7 +1,6 @@
-import BookItems from "./BookItems"
-import books from "../assets/books.json"
-import { v4 as uuidv4 } from 'uuid';
-
+import BookItems from "./BookItems";
+import books from "../assets/books.json";
+import { v4 as uuidv4 } from "uuid";
 
 function BookList() {
   return (
@@ -10,6 +9,7 @@ function BookList() {
       <ul className="books__list">
         {books.map((book) => {
           let uniqueId = uuidv4();
+          console.log(book.desc.length);
           return (
             <ol key={uniqueId}>
               <BookItems book={book} />
@@ -21,4 +21,4 @@ function BookList() {
   );
 }
 
-export default BookList
+export default BookList;

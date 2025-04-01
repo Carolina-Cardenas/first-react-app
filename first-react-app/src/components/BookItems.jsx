@@ -1,20 +1,59 @@
+import React, { useState } from "react";
 
 function BookItems({ book }) {
-    return (
-      <section className="booksContainer">
-    
-          <section  className="booksItems">
-            <h3 className="booksItems__title">{book.title}</h3>
-            <h4 className="booksItems__author">Av {book.author}</h4>
-            <p className="booksItems__desc">{book.desc}</p>
-            <p className="booksItems__type">{book.genre}</p> 
-            <button className="booksItems__button">Add to cart</button>
-            </section>     
+  const maxLengthDesc = 100;
+  const maxLengthTitle = 27;
+
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handlerSeeMoreClick = () => {
+    setIsExpanded(!isExpanded);
+  };
+  const shortenedTitle =
+    book.title && book.title.length > maxLengthTitle
+      ? isExpanded
+        ? book.title
+        : book.title.substring(0, maxLengthTitle) + "... "
+      : book.title;
+
+  const shortenedDesc =
+    book.desc && book.desc.length > maxLengthDesc
+      ? isExpanded
+        ? book.desc
+        : book.desc.substring(0, maxLengthDesc) + "... "
+      : book.desc;
+
+  return (
+    <section className="booksContainer">
+      <section className="booksItems">
+        <h3 className="booksItems__title">
+          {shortenedTitle}
+          {book.title && book.title.length > maxLengthDesc && (
+            <span
+              className="text-blue-500 cursor-pointer"
+              onClick={handlerSeeMoreClick}
+            >
+              {isExpanded ? "See less" : "See more..."}
+            </span>
+          )}
+        </h3>
+
+        <h4 className="booksItems__author">Av {book.author}</h4>
+        <p className="booksItems__desc">
+          {shortenedDesc}
+          {book.desc && book.desc.length > maxLengthDesc && (
+            <span
+              className="text-blue-500 cursor-pointer"
+              onClick={handlerSeeMoreClick}
+            >
+              {isExpanded ? "See less" : "See more..."}
+            </span>
+          )}
+        </p>
+        <p className="booksItems__type">{book.genre}</p>
+        <button className="booksItems__button">Add to cart</button>
       </section>
-    );
-  }
-
-
-
-export default BookItems
-
+    </section>
+  );
+}
+export default BookItems;
