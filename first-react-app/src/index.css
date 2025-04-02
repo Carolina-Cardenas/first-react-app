@@ -157,3 +157,8 @@
     cursor: pointer;
   }
 }
+
+.buttonCounter {
+  display: flex;
+  justify-content: space-between;
+}

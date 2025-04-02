@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import Counter from "./Counter";
 
 function BookItems({ book }) {
+  const [counter, setCounter] = useState(0);
   const maxLengthDesc = 100;
   const maxLengthTitle = 27;
 
@@ -51,7 +53,7 @@ function BookItems({ book }) {
           )}
         </p>
         <p className="booksItems__type">{book.genre}</p>
-        <button className="booksItems__button">Add to cart</button>
+        <Counter counter={counter} setCounter={setCounter} />
       </section>
     </section>
   );
