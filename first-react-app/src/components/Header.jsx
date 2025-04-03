@@ -1,13 +1,13 @@
 import Cart from "./Cart";
-import Logo from "./Logo"
+import Logo from "./Logo";
 
-function Header() {
+function Header({ cartCount }) {
   return (
     <header className="header">
       <Logo />
-      <Cart/>
-  </header>
-  )
+      <Cart cartCount={cartCount} />
+    </header>
+  );
 }
 
 export default Header;

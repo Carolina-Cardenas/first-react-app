@@ -138,24 +138,58 @@
 }
 
 /* // Login Form */
-.loginForm {
-  width: 100%;
-  display: flex;
-  gap: 5rem;
+.login-container {
+  flex-direction: column;
+  width: 30rem;
+  margin: 3rem auto;
+  padding: 1.25rem;
+  background: white;
+  box-shadow: 0rem 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  text-align: center;
+}
 
+.h2 {
+  margin-bottom: 1.25rem;
+  margin-top: 1rem;
+  color: #333;
+}
 
-  .loginForm__input {
-    padding: 1rem;
-  }
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-bottom: 0.625rem;
+}
 
-  loginForm__button {
-    flex: 1;
-    padding: 1rem;
-    background-color: #4cb278;
-    color: #ffffff;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+.loginForm__input {
+  padding: 1rem;
+  margin-bottom: 0.9375rem;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.875rem;
+  color: #727272;
+  margin-bottom: 0.3125rem;
+}
+
+.loginForm__button {
+  flex: 100%;
+  padding: 1rem;
+  background-color: #4cb278;
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.725rem;
+  border: none;
+  border-radius: 0.3125rem;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
 }
 
 .buttonCounter {
